@@ -12,7 +12,9 @@ class DatabaseConnection
   # the database name given in argument.
   def self.connect
     if ENV['DATABASE_URL'] != nil
-      @connection = PG.connect(ENV['DATABASE_URL'])
+      # @connection = PG.connect(ENV['DATABASE_URL'])
+      @connection = PG.connect({ host: 'dpg-chact12k728r8816vpq0-a', dbname: 'my_app_database_rfjr' })
+      
       return
     end
     if ENV['ENV'] == 'test'
